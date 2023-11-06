@@ -15,12 +15,35 @@ orbs:
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
   all-the-time:
+    parameters:
+      param:
+        type: string
+        default: DEFAULT
     docker:
       - image: cimg/python:3.10.2
     steps:
       - run:
           name: every time
           command: echo "every time"
+      - when:
+          condition:
+            or:
+              - equal: [ "DEFAULT", << parameters.param >> ]
+          steps:
+            - run:
+                name: DEFAULT
+                shell: /bin/bash
+                command: echo SPRINKLES
+      - when:
+          condition:
+            and:
+              - not:
+                - equal: [ "DEFAULT", << parameters.param >> ]
+          steps:
+            - run:
+                name: SPECIFIED
+                shell: /bin/bash
+                command: echo << parameters.param >>
   only-tags:
     docker:
       - image: cimg/python:3.10.2
