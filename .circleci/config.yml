@@ -38,7 +38,7 @@ jobs:
           condition:
             and:
               - not:
-                - equal: [ "DEFAULT", << parameters.param >> ]
+                  equal: [ "DEFAULT", << parameters.param >> ]
           steps:
             - run:
                 name: SPECIFIED
