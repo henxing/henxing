@@ -36,12 +36,11 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - all-the-time:
-          filters:
+          filters: &filters
             tags:
               only: /.*/
       - only-tags:
           filters:
-            tags:
-              only: /.*/
+            <<: *filters
             branches:
               ignore: /.*/
