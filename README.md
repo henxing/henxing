@@ -5,7 +5,7 @@
 
 - 💬 Ask me about **python**
 
-- 📫 How to reach me **henxing at gmail.com**
+- 📫 How to reach me **deeoh at woodforsheep.trade**
 
 - 📄 Know about my experiences [http://linkedin.com/in/henxing](http://linkedin.com/in/henxing)
 
